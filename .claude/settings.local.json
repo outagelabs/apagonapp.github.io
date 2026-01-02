@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:apagonapp.com)",
+      "Read(//Users/hector/code/bokete.github.io/**)",
+      "WebSearch",
+      "Bash(curl -L -o app-icon.png \"https://images.squarespace-cdn.com/content/v1/5a00cc2efe54ef2daf364e10/1519696424471-R5JTH7EQQ69KQY8VUC8D/Apagon_App_AndroidStore_logo.png\")",
+      "Bash(git add .)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
