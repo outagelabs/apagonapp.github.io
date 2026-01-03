@@ -5,7 +5,13 @@
       "Read(//Users/hector/code/bokete.github.io/**)",
       "WebSearch",
       "Bash(curl -L -o app-icon.png \"https://images.squarespace-cdn.com/content/v1/5a00cc2efe54ef2daf364e10/1519696424471-R5JTH7EQQ69KQY8VUC8D/Apagon_App_AndroidStore_logo.png\")",
-      "Bash(git add .)"
+      "Bash(git add .)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nAdd Apagón app landing page with ASCII art style\n\n## What\nLanding page for Apagón power outage reporting app. Features ASCII art design, app screenshots, download links, feature descriptions.\n\n## Why\nCreate professional web presence for Apagón app using bokete.github.io terminal aesthetic.\n\n## How\n- Copied bokete.github.io monospace/ASCII style (style.css)\n- Created index.html with app information\n- Added 4 app screenshots (Home, Location, Map, Zoom Map)\n- Structured sections: Download, Preview, Features, How It Works, Requirements, About\n- Downloaded official app icon\n- Added .nojekyll for GitHub Pages\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(gh repo view --web)",
+      "Bash(curl -s \"https://apagonapp.com/terminos-legal\")",
+      "Bash(curl -s \"https://apagonapp.com/privacidad-legal\")",
+      "Bash(curl -s \"https://apagonapp.com/licencias\")",
+      "Read(//Users/hector/code/apagon-ios/apagon/apagon/Assets.xcassets/AppIcon.appiconset/**)"
     ],
     "deny": [],
     "ask": []
