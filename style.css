@@ -12,6 +12,14 @@ body {
     padding: 20px;
     max-width: 900px;
     margin: 0 auto;
+    /* Better text rendering on mobile */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Prevent text size adjustment on mobile */
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 .ascii-art {
@@ -20,6 +28,8 @@ body {
     line-height: 1.2;
     margin: 20px 0;
     overflow-x: auto;
+    /* Smooth scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
 }
 
 .ascii-logo {
@@ -77,9 +87,15 @@ a {
     color: #000000;
     text-decoration: underline;
     font-weight: bold;
+    /* Remove tap highlight on mobile */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    /* Better touch targets */
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
 }
 
-a:hover {
+a:hover, a:active {
     background-color: #000000;
     color: #ffffff;
 }
@@ -114,9 +130,15 @@ a:hover {
     background-color: #ffffff;
     color: #000000;
     font-weight: bold;
+    /* Better touch interaction */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.2);
+    touch-action: manipulation;
+    /* Ensure minimum touch target size */
+    min-height: 44px;
+    min-width: 44px;
 }
 
-.button:hover {
+.button:hover, .button:active {
     background-color: #000000;
     color: #ffffff;
 }
@@ -226,6 +248,7 @@ a:hover {
     line-height: 1.4;
 }
 
+/* Tablet and smaller devices */
 @media (max-width: 768px) {
     .preview-container {
         gap: 30px;
@@ -251,15 +274,170 @@ a:hover {
         height: 150px;
         box-shadow: 5px 5px 0px 0px #000000;
     }
+
     body {
         padding: 10px;
     }
 
     .ascii-logo {
         font-size: 10px;
+        padding: 15px;
     }
 
     .ascii-art {
         font-size: 12px;
+    }
+
+    .nav a {
+        margin: 5px 10px;
+        display: inline-block;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+}
+
+/* Mobile phones - Samsung Galaxy, iPhone */
+@media (max-width: 480px) {
+    body {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .ascii-logo {
+        font-size: 8px;
+        padding: 10px;
+        border: 2px solid #000000;
+        box-shadow: 4px 4px 0px 0px #000000;
+        margin: 15px 0;
+    }
+
+    .ascii-art {
+        font-size: 7px;
+        line-height: 1.1;
+    }
+
+    .app-icon-hero {
+        width: 120px;
+        height: 120px;
+        box-shadow: 4px 4px 0px 0px #000000;
+    }
+
+    /* Touch-friendly buttons */
+    .button {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin: 10px auto;
+        padding: 15px 20px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    /* Stack navigation links vertically on very small screens */
+    .nav {
+        padding: 10px;
+        margin: 20px 0;
+    }
+
+    .nav a {
+        display: block;
+        margin: 10px 0;
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 15px;
+        overflow-wrap: break-word;
+    }
+
+    h3 {
+        font-size: 14px;
+    }
+
+    .preview-container {
+        gap: 20px;
+    }
+
+    .preview-screenshot {
+        max-width: 220px;
+        box-shadow: 3px 3px 0px 0px #000000;
+        border: 2px solid #000000;
+    }
+
+    .preview-item {
+        flex: 0 1 100%;
+    }
+
+    .section {
+        margin: 25px 0;
+    }
+
+    ul, ol {
+        margin-left: 20px;
+    }
+
+    .footer {
+        font-size: 11px;
+        margin-top: 30px;
+    }
+
+    .footer .ascii-art {
+        font-size: 6px;
+    }
+
+    /* Ensure ASCII boxes don't overflow */
+    .ascii-box {
+        padding: 10px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Better touch targets for links on mobile */
+    a {
+        padding: 4px 2px;
+    }
+
+    .nav a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Very small phones (iPhone SE, older Android) */
+@media (max-width: 375px) {
+    .ascii-logo {
+        font-size: 7px;
+        padding: 8px;
+    }
+
+    .ascii-art {
+        font-size: 6px;
+    }
+
+    .app-icon-hero {
+        width: 100px;
+        height: 100px;
+    }
+
+    body {
+        font-size: 13px;
+        padding: 5px;
+    }
+
+    .button {
+        padding: 12px 15px;
+        font-size: 13px;
+    }
+
+    .preview-screenshot {
+        max-width: 200px;
     }
 }
